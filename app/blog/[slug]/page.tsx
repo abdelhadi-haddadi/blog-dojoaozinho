@@ -1,36 +1,63 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 import { getAllPosts, getPostBySlug } from '@/lib/posts';
 import { ArrowLeft, Clock, Calendar } from 'lucide-react';
 
+const SITE_URL = 'https://blog-dojoaozinho.vercel.app'; // ← update to your real domain
+
 export async function generateStaticParams() {
   const posts = getAllPosts();
-  return posts.map(post => ({
-    slug: post.slug,
-  }));
+  return posts.map(post => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+
+  if (!post) return { title: 'Post não encontrado' };
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      type: 'article',
+      url: `${SITE_URL}/blog/${post.slug}`,
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.date,
+      authors: ['Joãozin'],
+    },
+    twitter: {
+      card: 'summary',
+      title: post.title,
+      description: post.excerpt,
+    },
+  };
 }
 
 export default async function BlogPost({
-  params
+  params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
-  if (!post) {
-    notFound();
-  }
+  if (!post) notFound();
 
   const formatDate = (dateString: string) => {
     try {
-      const date = new Date(dateString);
-      return date.toLocaleDateString('pt-BR', {
+      return new Date(dateString).toLocaleDateString('pt-BR', {
         year: 'numeric',
         month: 'long',
-        day: 'numeric'
+        day: 'numeric',
       });
     } catch {
       return dateString;
@@ -53,26 +80,22 @@ export default async function BlogPost({
 
         {/* Header do artigo */}
         <header className="mb-12 pb-8 border-b border-gray-200">
-          {/* Categoria */}
           <div className="mb-4">
             <span className="inline-block text-xs font-semibold text-red-600 uppercase tracking-wider">
               {post.category}
             </span>
           </div>
 
-          {/* Título */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             {post.title}
           </h1>
 
-          {/* Excerpt */}
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6">
             {post.excerpt}
           </p>
 
-          {/* Metadados */}
           <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-            <time className="flex items-center gap-1.5">
+            <time dateTime={post.date} className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4" />
               {formatDate(post.date)}
             </time>
@@ -93,7 +116,7 @@ export default async function BlogPost({
           prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
           prose-a:text-red-600 prose-a:no-underline hover:prose-a:underline
           prose-strong:text-gray-900 prose-strong:font-semibold
-          prose-code:text-red-600 prose-code:bg-gray-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-[''] prose-code:after:content-['']
+          prose-code:text-red-600 prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-[''] prose-code:after:content-['']
           prose-pre:bg-gray-900 prose-pre:text-gray-100
           prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-600
           prose-ul:list-disc prose-ul:pl-6
