@@ -105,7 +105,7 @@ export default function Footer() {
             </div>
 
             {/* HUGE TEXT */}
-            <div className="pointer-events-none absolute bottom-[-180px] left-1/2 -translate-x-1/2 select-none">
+            <div className="pointer-events-none absolute bottom-[-20px] left-1/2 -translate-x-1/2 select-none">
                 <h1 className="text-[340px] font-black leading-none tracking-[-0.08em] text-orange-600">
                     Inpsir
                 </h1>
