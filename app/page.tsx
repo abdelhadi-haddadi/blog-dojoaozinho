@@ -205,7 +205,7 @@ export default function Home() {
                     className="block group"
                   >
                     <div className="flex gap-3">
-                      <span className="text-2xl font-bold text-gray-200 group-hover:text-red-600 transition-colors">
+                      <span className="text-2xl font-bold text-gray-400 group-hover:text-red-600 transition-colors">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <div className="flex-1">
