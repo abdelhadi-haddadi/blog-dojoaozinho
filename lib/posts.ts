@@ -10,6 +10,7 @@ export interface Post {
   readTime: string;
   category: string;
   content: string;
+  image: string;
 }
 
 const postsDirectory = path.join(process.cwd(), 'posts');
@@ -58,7 +59,7 @@ export function getAllPosts(): Post[] {
         excerpt: data.excerpt || data.description || '',
         readTime: data.readTime || '5 min',
         category: data.category || 'Geral',
-        content,
+        content,image,
       } as Post;
     });
 
@@ -88,7 +89,7 @@ export function getPostBySlug(slug: string): Post | null {
       excerpt: data.excerpt || data.description || '',
       readTime: data.readTime || '5 min',
       category: data.category || 'Geral',
-      content,
+    content,image,
     } as Post;
   } catch (error) {
     console.error(`Erro ao ler post ${slug}:`, error);
