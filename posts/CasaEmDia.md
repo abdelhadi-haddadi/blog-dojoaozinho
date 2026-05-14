@@ -3,6 +3,7 @@ title: "Casa em Dia: Aplicativo Mobile para Gestão Doméstica Completa"
 excerpt: "Conheça o Casa em Dia, um aplicativo React Native que simplifica a organização de tarefas, finanças e atividades familiares com interface intuitiva e colaborativa."
 date: 2025-11-16
 category: "Android"
+image: "https://images.unsplash.com/photo-1777896193454-8b4863264f0b"
 ---
 
 # Casa em Dia: Aplicativo Mobile para Gestão Doméstica Completa
