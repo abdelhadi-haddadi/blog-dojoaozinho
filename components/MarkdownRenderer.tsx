@@ -39,7 +39,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
             </blockquote>
           ),
           code: ({ children }) => (
-            <code className=" px-2 py-1 rounded text-sm font-mono">
+            <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono text-gray-800">
               {children}
             </code>
           ),
@@ -61,9 +61,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
           tbody: ({ children }) => (
             <tbody className="bg-white divide-y divide-gray-200">{children}</tbody>
           ),
-          tr: ({ children }) => (
-            <tr>{children}</tr>
-          ),
+          tr: ({ children }) => <tr>{children}</tr>,
           th: ({ children }) => (
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
               {children}
