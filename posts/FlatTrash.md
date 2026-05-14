@@ -3,6 +3,7 @@ title: "FlatTrash: Script Completo de Limpeza e Otimização para Linux"
 excerpt: "Conheça o FlatTrash, um script bash poderoso que automatiza a limpeza do seu sistema Linux, liberando espaço em disco e otimizando o desempenho com segurança."
 date: 2025-11-16
 category: "Linux"
+image: "https://images.unsplash.com/photo-1777896193454-8b4863264f0b"
 ---
 
 # FlatTrash: Script Completo de Limpeza e Otimização para Linux
