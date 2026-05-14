@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     images: ['/LGO.png'],
   },
   icons: {
-    icon: '/LGO.png',
+    icon: '/LGO.avif',
   },
   robots: {
     index: true,
