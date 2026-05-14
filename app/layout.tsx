@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     title: 'Blog do Joãozin',
     description:
       'Blog sobre tecnologia, programação, Linux e desenvolvimento web.',
-    images: [{ url: '/LGO.png', width: 512, height: 512, alt: 'Blog do Joãozin' }],
+    images: [{ url: '/LGO.avif', width: 512, height: 512, alt: 'Blog do Joãozin' }],
   },
   twitter: {
     card: 'summary',
     title: 'Blog do Joãozin',
     description: 'Blog sobre tecnologia, programação, Linux e desenvolvimento web.',
-    images: ['/LGO.png'],
+    images: ['/LGO.avif'],
   },
   icons: {
     icon: '/LGO.avif',
