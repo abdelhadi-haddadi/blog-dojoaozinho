@@ -3,6 +3,7 @@ title: "Ambiente Mobile Profissional: React Native + Docker no Pop!_OS"
 excerpt: "Guia prático para configurar um ambiente de desenvolvimento mobile com React Native (Expo) e Docker no Pop!_OS, seguindo boas práticas e focando em produtividade."
 date: 2026-01-17
 category: "Mobile"
+image: "https://images.unsplash.com/photo-1777896193454-8b4863264f0b"
 ---
 
 ## Introdução
