@@ -20,23 +20,23 @@ export default function Footer() {
 
                         <p className="max-w-sm text-sm leading-7 text-neutral-700">
                             Ao enviar este formulário, você concorda com nossos{' '}
-                            <a href="/privacy" className="underline hover:text-black">
+                            <a href="/privacy" className="underline text-neutral-700 hover:text-black">
                                 termos de privacidade
                             </a>
                             . Você pode cancelar a qualquer momento.
                         </p>
 
                         <div className="flex gap-6 text-neutral-600">
-                            <a href="#" className="hover:text-black transition-colors">GitHub</a>
-                            <a href="#" className="hover:text-black transition-colors">X</a>
-                            <a href="#" className="hover:text-black transition-colors">YouTube</a>
-                            <a href="#" className="hover:text-black transition-colors">Discord</a>
+                            <a href="#" className="text-neutral-700 hover:text-black transition-colors">GitHub</a>
+                            <a href="#" className="text-neutral-700 hover:text-black transition-colors">X</a>
+                            <a href="#" className="text-neutral-700 hover:text-black transition-colors">YouTube</a>
+                            <a href="#" className="text-neutral-700 hover:text-black transition-colors">Discord</a>
                         </div>
 
                         <div className="flex gap-6 text-sm text-neutral-700">
                             <span>© {new Date().getFullYear()} Blog do Joãozin</span>
-                            <a href="/privacy" className="hover:text-black transition-colors">Privacidade</a>
-                            <a href="/contact" className="hover:text-black transition-colors">Contato</a>
+                            <a href="/privacy" className="text-neutral-700 hover:text-black transition-colors">Privacidade</a>
+                            <a href="/contact" className="text-neutral-700 hover:text-black transition-colors">Contato</a>
                         </div>
                     </div>
 
@@ -78,13 +78,13 @@ export default function Footer() {
                                 },
                             ].map((item) => (
                                 <div key={item.title} className="space-y-5">
-                                    <h3 className="font-semibold">{item.title}</h3>
+                                    <h2 className="font-semibold">{item.title}</h2>
                                     <div className="space-y-4 text-neutral-600">
                                         {item.links.map((link) => (
                                             <a
                                                 key={link.label}
                                                 href={link.href}
-                                                className="block transition hover:text-black"
+                                                className="block transition text-neutral-700 hover:text-black"
                                             >
                                                 {link.label}
                                             </a>
