@@ -52,15 +52,16 @@ export function getAllPosts(): Post[] {
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data, content } = matter(fileContents);
 
-      return {
-        slug: data.slug || slug,
-        title: data.title || 'Sem título',
-        date: data.date || new Date().toISOString(),
-        excerpt: data.excerpt || data.description || '',
-        readTime: data.readTime || '5 min',
-        category: data.category || 'Geral',
-        content,image,
-      } as Post;
+     return {
+      slug,
+      title: data.title,
+      excerpt: data.excerpt,
+      date: data.date,
+      readTime: data.readTime || '5 min',
+      category: data.category || 'Geral',
+      content,
+      image: data.image || '/images/default.jpg',
+    } as Post;
     });
 
   return allPostsData.sort((a, b) => {
@@ -83,13 +84,14 @@ export function getPostBySlug(slug: string): Post | null {
     const { data, content } = matter(fileContents);
 
     return {
-      slug: data.slug || slug,
-      title: data.title || 'Sem título',
-      date: data.date || new Date().toISOString(),
-      excerpt: data.excerpt || data.description || '',
+      slug,
+      title: data.title,
+      excerpt: data.excerpt,
+      date: data.date,
       readTime: data.readTime || '5 min',
       category: data.category || 'Geral',
-    content,image,
+      content,
+      image: data.image || '/images/default.jpg',
     } as Post;
   } catch (error) {
     console.error(`Erro ao ler post ${slug}:`, error);
