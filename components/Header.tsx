@@ -56,7 +56,7 @@ export default function Header() {
           <Link href="/" className="group flex items-center gap-4">
             <div className="relative">
               <Image
-                src="/LGO.png"
+                src="/LGO.avif"
                 width={48}
                 height={48}
                 unoptimized
