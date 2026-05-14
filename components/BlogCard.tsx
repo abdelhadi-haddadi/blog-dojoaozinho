@@ -22,6 +22,16 @@ export default function BlogCard({ post }: BlogCardProps) {
   return (
     <Link href={`/blog/${post.slug}`}>
       <article className="group py-8 border-b border-gray-100 last:border-0 hover:bg-gray-50 -mx-6 px-6 transition-colors">
+            {/* Image */}
+    <div className="relative w-full h-64 mb-6 overflow-hidden rounded-2xl">
+      <Image
+        src={post.image}
+        alt={post.title}
+        fill
+        className="object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+    </div>
+         {/* Meta */}
         <div className="flex items-center gap-3 text-sm text-gray-500 mb-3">
           <span className="text-xs font-medium uppercase tracking-wider text-gray-900">
             {post.category}
@@ -31,15 +41,16 @@ export default function BlogCard({ post }: BlogCardProps) {
           <span>•</span>
           <span>{post.readTime}</span>
         </div>
-
+    {/* Title */}
         <h2 className="text-2xl font-bold mb-3 group-hover:text-gray-600 transition-colors">
           {post.title}
         </h2>
-
+    {/* Excerpt */}
         <p className="text-gray-600 leading-relaxed">
           {post.excerpt}
         </p>
 
+    {/* Read More */}
         <div className="mt-4 text-sm font-medium text-gray-900 group-hover:underline">
           Ler mais →
         </div>
