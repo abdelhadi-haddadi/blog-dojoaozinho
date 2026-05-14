@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Post } from '@/lib/posts';
-
+import Image from 'next/image';
 interface BlogCardProps {
   post: Post;
 }
