@@ -18,7 +18,7 @@ export default function Footer() {
                             </button>
                         </div>
 
-                        <p className="max-w-sm text-sm leading-7 text-neutral-500">
+                        <p className="max-w-sm text-sm leading-7 text-neutral-700">
                             Ao enviar este formulário, você concorda com nossos{' '}
                             <a href="/privacy" className="underline hover:text-black">
                                 termos de privacidade
@@ -33,7 +33,7 @@ export default function Footer() {
                             <a href="#" className="hover:text-black transition-colors">Discord</a>
                         </div>
 
-                        <div className="flex gap-6 text-sm text-neutral-500">
+                        <div className="flex gap-6 text-sm text-neutral-700">
                             <span>© {new Date().getFullYear()} Blog do Joãozin</span>
                             <a href="/privacy" className="hover:text-black transition-colors">Privacidade</a>
                             <a href="/contact" className="hover:text-black transition-colors">Contato</a>
