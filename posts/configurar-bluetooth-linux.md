@@ -3,6 +3,7 @@ title: "Como Configurar o Bluetooth no Linux de Forma Simples"
 excerpt: "Um guia prático para configurar e solucionar problemas de Bluetooth no Arch Linux, Ubuntu e suas derivadas."
 date: "2025-05-20T22:30:00Z"
 category: "Linux"
+image: "https://images.unsplash.com/photo-1777896193454-8b4863264f0b"
 ---
 
 # Como Configurar o Bluetooth no Linux de Forma Simples
